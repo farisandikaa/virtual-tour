@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Virtual Tour Gedung Rektorat</title>
+    <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>* {
+        margin: 0;
+        padding: 0;
+    }
+    body {
+    background: url('images/gedung-unpak.jpg') no-repeat center center fixed;
+    background-size: cover;
+    background-color: #000;
+    color: white;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5); /* overlay hitam agar teks mudah dibaca */
+    z-index: -1;
+  }
+  .dropdown {
+  position: relative;
+}
+
+.dropdown-toggle {
+  cursor: pointer;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 8px 8px 8px 10px;
+  font-size: 25px;
+  transition: 0.4s;
+  text-transform: uppercase;
+}
+
+.dropdown-content {
+  display: none;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-left: 4px solid deepskyblue;
+  margin-left: 10px;
+}
+
+.dropdown-content a {
+  font-size: 18px;
+  padding: 6px 10px;
+  text-align: left;
+  color: white;
+  text-transform: none;
+}
+
+.dropdown-content a:hover {
+  background-color: deepskyblue;
+  color: black;
+}
+
+    html {
+        scroll-behavior: smooth;
+    }
+    #leftMenu {
+        height: 100%;
+        width: 250px;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 60px;
+        z-index: 1000;
+    }
+    .mainNav {
+        margin-top: 70px;
+    }
+    .mainNav a {
+        margin-bottom: 15px;
+    }
+    .content, .baak, .baum, .RuangRapat, .EVOS, .SmartClass, .panduan {
+        display: grid;
+        place-items: center;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.8);
+    }
+    .content h2, .baak h2, .baum h2, .RuangRapat h2, .EVOS h2, .SmartClass h2, .panduan h2 {
+        font-family: russo one;
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 50px;
+        color: deepskyblue;
+    }
+    .content p {
+        font-family: montserrat;
+        width: 65%;
+        line-height: 1.9;
+        text-align: center;
+        margin: auto;
+    
+    }
+    .baak p, .baum p, .RuangRapat p, .EVOS p, .SmartClass p, .panduan p {
+        font-family: montserrat;
+        width: 65%;
+        line-height: 1.9;
+        text-align: justify;
+        margin: auto;
+    }
+    .content {
+        display: grid;
+        place-items: center;
+        height: 100vh;
+        background: url(img/1.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        position: relative;
+        z-index: 1;
+    }
+    .content:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        z-index: -1;
+    }
+    .content p {
+        color: #fff;
+    }
+    #leftMenu a {
+        padding: 8px 8px 8px 10px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #fff;
+        display: block;
+        transition: 0.4s;
+        text-align: center;
+        text-transform: uppercase;
+        border-radius: 0 50PX 50px 0;
+    }
+    #leftMenu a:hover {
+        color: #000;
+        background: #FFF;
+    }
+    #leftMenu a.btn-area {
+        border-radius: 0;
+    }
+    #leftMenu .btn-area {
+        position: absolute;
+        top: 0;
+        right: 15px;
+        font-size: 40px;
+    }
+
+    .start-button {
+  display: inline-flex; /* atau flex */
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #38bdf8;
+  color: #0f172a;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+.menu-toggle {
+  position: fixed;
+  left: 200px;
+  top: 10%;
+  transform: translateY(-50%);
+  z-index: 1101;
+  background: deepskyblue;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 24px;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.box {
+  text-align: center;
+}
+
+    span {
+        position: fixed;
+        left: 90px;
+        top: 30px;
+        font-size: 30px;
+        transition: 0.3s;
+        cursor: pointer;
+        z-index: 5;
+        color: deepskyblue;
+    }
+    @media (max-width:767px) {
+        span {
+            right: 15px;
+            top: 20px;
+            font-size: 20px;
+        }
+        .content h2, .baak h2, .baum h2, .RuangRapat h2, .EVOS h2, .SmartClass h2 {
+            font-size: 35px;
+        }
+        .mainNav {
+            margin-top: 20px;
+        }
+    }</style>
+</head>
+<body>
+    <audio id="welcomeAudio" src="audios/Mars.mp3"></audio>
+    <script>
+      document.addEventListener('click', function playOnce() {
+        const audio = document.getElementById('welcomeAudio');
+        if (audio) {
+          audio.play();
+        }
+        document.removeEventListener('click', playOnce); // hanya sekali
+      });
+    </script>
+    <div id="leftMenu">
+        <button id="menuToggle" class="menu-toggle tooltip" data-tooltip="Tutup Menu">
+            <i id="menuIcon" class="fa fa-times"></i>
+          </button>          
+        <div class="mainNav">
+            <a href="#">home</a>
+            <a href="#!" class="dropdown-toggle">Lantai 1 ▼</a>
+            <div class="dropdown-content">
+            <a href="panoramabaak.html">baak</a>
+            </div>
+            <a href="#!" class="dropdown-toggle">Lantai 2▼</a>
+            <div class="dropdown-content">
+                <a href="panoramabaum.html">baum</a>
+            </div>
+            <a href="#!" class="dropdown-toggle">Lantai 3 ▼</a>
+            <div class="dropdown-content">
+            <a href="panoramarapat.html">Ruang Rapat</a>
+            <a href="panoramaevos.html">EVOS</a>
+            </div>
+            <a href="#!" class="dropdown-toggle">Lantai 4 ▼</a>
+            <div class="dropdown-content">
+            <a href="panoramasmart.html">Smart Class</a>
+            </div>
+            <a href="#panduan">panduan</a>
+        </div>
+    </div>
+    
+    <div class="content">
+        <div class="box">
+            <h2>Explore Rektorat in 360°</h2>
+        <p>Jelajahi Gedung Rektorat secara virtual, dari mana saja dan kapan saja.</p>
+        <a href="panorama.html" class="start-button">Mulai Tur</a>
+        </div>
+    </div>
+    <div class="baak" id="baak">
+        <div class="box">
+           <!-- <h2>BAAK</h2>
+            <p>Biro Administrasi Akademik & Kemahasiswaan (BAAK) Uiversitas Pakuan merupakan 
+                pusat layanan akademik yang handal dan profesional, siap membantu seluruh civitas 
+                akademika dengan berbagai kebutuhan terkait akademik dan kemahsiswaan. BAAK 
+                berkomitmen untuk memberikan layanan prima, mulai dari pemrosesan pengajuan cuti 
+                dan pindah universitas. Hingga informasi pendaftaran mahasiswa baru, keuangan, 
+                wisuda, dan berbagai pertanyaan akademik lainnya.</p>-->
+        </div>
+    </div>
+    <div class="baum" id="baum">
+        <div class="box">
+            <!--<h2>BAUM</h2>
+            <p>Biro Administrasi Umum (BAUM) Uiversitas Pakuan merupakan pusat layanan administrasi 
+                umum yang handal dan profesional, BAUM siap membantu seluruh civitas akademika 
+                dengan berbagai kebutuhan terkait fasilitas hingga sdm. BAUM berkomitmen untuk 
+                memberikan layanan prima, mulai dari pemeliharaan dan pengelolaan aset. Hingga 
+                pelayanan administrasi sumber daya seperti keuangan, sarana prasarana, dan fasilitas 
+                lainnya.</p>-->
+        </div>
+    </div>
+    <div class="RuangRapat" id="RuangRapat">
+        <div class="box">
+          <!--  <h2>Ruang Rapat</h2>
+            <p>Ruang Rapat Besar di Gedung Rektorat Universitas Pakuan adalah fasilitas premium yang 
+                dirancang untuk mendukung berbagai kegiatan rapat, seminar, dan konferensi dengan 
+                skala besar. Dilengkapi dengan teknologi canggih, ruang ini menyediakan pengalaman 
+                rapat yang lebih efisien dan profesional, dengan fasilitas seperti proyektor interaktif, smart 
+                board, sistem audio-visual berkualitas tinggi, dan koneksi internet super cepat. </p>
+        </div>-->
+    </div>
+    <div class="EVOS" id="EVOS">
+        <div class="box">
+            <!--<h2>EVOS</h2>
+            <p>Ruang EVOS di Gedung Rektorat Universitas Pakuan adalah fasilitas inovatif hasil kerja 
+                sama antara Universitas Pakuan dan PT. EVOS Esports Indonesia, yang dirancang untuk 
+                mendukung pengembangan karier mahasiswa dalam industri esports dan teknologi 
+                digital. Ruang ini meliputi Career Center dan Experience Zone, memberikan mahasiswa 
+                kesempatan untuk terlibat langsung dalam dunia esports, baik dari segi pengembangan 
+                keterampilan maupun peluang kerja di industri yang berkembang pesat ini. Dengan 
+                fasilitas ini, Universitas Pakuan tidak hanya menyediakan ruang untuk belajar, tetapi juga 
+                mempersiapkan mahasiswa untuk memasuki dunia kerja yang penuh peluang di industri 
+                esports dan teknologi digital.</p>-->
+        </div>
+    </div>
+    <div class="SmartClass" id="SmartClass">
+        <div class="box">
+    <!--        <h2>Smart Class</h2>
+            <p>Smart Class di Universitas Pakuan adalah ruang kelas yang memanfaatkan teknologi 
+                canggih untuk meningkatkan kualitas spembelajaran dan pengalaman belajar mahasiswa. 
+                Ruang ini dilengkapi dengan proyektor pintar, smart board, dan koneksi internet, yang 
+                memungkinkan interaksi yang lebih interaktif dan kolaboratif antara dosen dan 
+                mahasiswa. </p> --->
+        </div>
+    </div>
+    <div class="panduan" id="panduan">
+        <div class="box">
+            <h2>PANDUAN</h2>
+            <p>Selamat datang di Virtual Tour Gedung Rektorat Universitas Pakuan.
+            </br>
+            </br>
+                Kami mengundang Anda untuk menjelajahi setiap sudut gedung ini secara interaktif dan imersif.
+            </br>
+            </br>
+                Untuk memulai tur, arahkan kursor Anda dan klik pada ikon panah atau pintu yang tersedia untuk berpindah ke ruangan atau area selanjutnya.
+            </br>
+            </br>
+                Beberapa titik tertentu dilengkapi dengan ikon tanda tanya. Klik ikon tersebut untuk mendapatkan informasi tambahan seperti dokumen atau penjelasan multimedia.
+            </br>
+            </br>
+                Anda juga dapat melihat tulisan petunjuk saat mengarahkan kursor ke ikon tertentu.
+            </br>
+            </br>
+                Jelajahi gedung ini secara bebas, dan temukan informasi penting seputar fasilitas, layanan, dan lingkungan kampus.
+            </br>
+            </br>
+                Selamat menikmati pengalaman tur virtual Gedung Rektorat Universitas Pakuan!
+                </p>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        const sidebar = document.getElementById('leftMenu');
+        const toggleBtn = document.getElementById('menuToggle');
+        const menuIcon = document.getElementById('menuIcon');
+      
+        toggleBtn.addEventListener('click', () => {
+          const isOpen = sidebar.style.width === '250px';
+      
+          if (isOpen) {
+            sidebar.style.width = '0';
+            menuIcon.classList.remove('fa-times');
+            menuIcon.classList.add('fa-bars');
+            toggleBtn.setAttribute('data-tooltip', 'Buka Menu');
+          } else {
+            sidebar.style.width = '250px';
+            menuIcon.classList.remove('fa-bars');
+            menuIcon.classList.add('fa-times');
+            toggleBtn.setAttribute('data-tooltip', 'Tutup Menu');
+          }
+        });
+      
+        // Buka sidebar saat halaman dimuat
+        sidebar.style.width = '250px';
+      </script>
+      <script>
+        document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
+          toggle.addEventListener('click', function () {
+            const dropdown = this.nextElementSibling;
+            dropdown.style.display = dropdown.style.display === 'flex' ? 'none' : 'flex';
+          });
+        });
+      </script>
+      
+      
+
+      
