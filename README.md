@@ -17,11 +17,6 @@ The virtual tour showcases multiple sections of the Rectorate Building with pano
 - ✅ Information pop-ups for specific points of interest
 - ✅ Responsive design for desktop and mobile devices
 
-## 📦 Installation & Usage
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/username/virtual-tour-rektorat.git
-
-   ## 📄 License
+## 📄 License
 MIT License © 2025 Faris Andika Putra – see the [LICENSE](LICENSE) file for details.
 
