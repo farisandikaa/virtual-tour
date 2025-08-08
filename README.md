@@ -8,7 +8,7 @@ The virtual tour showcases multiple sections of the Rectorate Building with pano
 
 ## 🛠️ Technologies Used
 - HTML, CSS, JavaScript
-- [Three.js / OrbitControl] 
+- Three.js / OrbitControl 
 - Responsive Web Design
 
 ## 🚀 Key Features
