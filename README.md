@@ -23,5 +23,6 @@ MIT License © 2025 Faris Andika Putra – see the [LICENSE](LICENSE) file for d
 ## 📧 Contact
 
 For inquiries, custom orders, or business collaborations:
-Email: farisandika2111@gmail.com
-Phone: +62-896-9347-7040
+- **Email** : farisandika2111@gmail.com
+- **Phone** : +62-896-9347-7040
+   
